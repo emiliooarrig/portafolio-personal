@@ -1,0 +1,333 @@
+/* estilos.css */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(245, 245, 245, 0.9);
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid #e2e2e2;
+  z-index: 1000;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.navbar .nav-links a {
+  margin-left: 1.5rem;
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: .3s all;
+}
+
+.navbar .nav-links a:hover {
+  color: #79a97c; /* sage-ish */
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    color: #4a4a4a;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f5f5f5;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem 0;
+    border-top: 1px solid #e2e2e2;
+  }
+
+  .nav-links a {
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    display: block;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+/* CSS de la portada */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fefcfb;
+  color: #2c2c2c;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+#inicio, #habilidades-tecnicas, #contacto{
+  background-color: #f3f3f3;
+}
+.hero {
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-text {
+  flex: 1 1 300px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text .highlight {
+  color: #79a97c;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #79a97c;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #658e6a;
+}
+
+.btn-outline {
+  border: 1px solid #ccc;
+  color: #333;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background-color: #f0f0f0;
+}
+
+.hero-image {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-wrapper {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #e6f0e6, #dcdcdc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* CSS sobre mi */
+.hero-education{
+  border-left: 2px solid #e2e2e2;
+  padding: 5px;
+}
+
+.carrera{
+  font-weight: 600;
+}
+
+.hero-buttons .hero-data {
+  background-color: #e3e7e3;
+  border-radius: 5px;
+  padding: 15px;
+  color: #4a6149;
+  font-weight: 600;
+}
+
+.lista-certificados .certificado-item{
+  padding: 5px;
+  border-bottom: 1px solid #e2e2e2;
+  width: fit-content;
+}
+
+/* CSS de las habilidades */
+.hero-content .hero-habilidades{
+  background-color: #fff;
+  text-align: center;
+  padding: 5px;
+}
+.titulo-seccion{
+  text-align: center;
+  font-size: 2rem;
+}
+
+.lista-habilidades{
+  list-style: none;
+  padding: 0px;
+  text-align: center;
+}
+
+.lista-habilidades .item-habilidades{
+  padding: 10px;
+  border: 1px solid #d6d3d1;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.hero-image-svg {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
+}
+
+/* CSS de los proyectos destacados */
+
+#proyectos .hero-content{gap: 0px;}
+.hero-proyectos {
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-proyectos:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-proyectos {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background-color: #f3f3f3; /* en caso de que no haya imagen */
+}
+
+.hero-proyectos h2 {
+  font-size: 1.5rem;
+  color: #2e2e2e;
+  margin-bottom: 10px;
+}
+
+.hero-proyectos p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.lista-techs {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tech {
+  background-color: #e3e7e3;
+  color: #4a6149;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.buttons-proyectos{
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-contacto{
+  text-align: center;
+}
+
+.titulo-proyectos{
+  font-weight: 600;
+  color: #79a97c;
+}
+
+/* CSS del Footer */
+.footer {
+  background-color: #2e2e2e;
+  color: #eaeaea;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #eaeaea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #79a97c;
+}
+
