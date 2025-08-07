@@ -1,5 +1,6 @@
 /* estilos.css */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW:wght@100..400&display=swap');
 
 .navbar {
   position: fixed;
@@ -26,7 +27,8 @@
 }
 
 .navbar .nav-links a:hover {
-  color: #79a97c; /* sage-ish */
+  color: #79a97c;
+  /* sage-ish */
 }
 
 .menu-toggle {
@@ -68,6 +70,10 @@
 
 /* CSS de la portada */
 
+.subtitle {
+  font-family: Playwrite AU NSW;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -81,9 +87,12 @@ body {
   padding: 0 1.5rem;
 }
 
-#inicio, #habilidades-tecnicas, #contacto{
+#inicio,
+#habilidades-tecnicas,
+#contacto {
   background-color: #f3f3f3;
 }
+
 .hero {
   padding-top: 6rem;
   padding-bottom: 4rem;
@@ -131,21 +140,38 @@ body {
 .btn-primary {
   background-color: #79a97c;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.4s ease;
+  background-image: linear-gradient(to right, #658e6a 0%, #658e6a 50%, #79a97c 50%, #79a97c 100%);
+  background-size: 200% 100%;
+  background-position: right bottom;
 }
 
 .btn-primary:hover {
-  background-color: #658e6a;
+  background-position: left bottom;
 }
 
 .btn-outline {
+  padding: 10px 20px;
   border: 1px solid #ccc;
   color: #333;
   background: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #919191 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: background-position 0.4s ease, color 0.4s ease;
 }
 
 .btn-outline:hover {
-  background-color: #f0f0f0;
+  background-position: left bottom;
+  color: #fff; /* opcional: resalta el texto */
 }
+
 
 .hero-image {
   flex: 1 1 300px;
@@ -172,12 +198,12 @@ body {
 }
 
 /* CSS sobre mi */
-.hero-education{
+.hero-education {
   border-left: 2px solid #e2e2e2;
   padding: 5px;
 }
 
-.carrera{
+.carrera {
   font-weight: 600;
 }
 
@@ -189,30 +215,59 @@ body {
   font-weight: 600;
 }
 
-.lista-certificados .certificado-item{
+.lista-certificados .certificado-item {
+  position: relative;
   padding: 5px;
-  border-bottom: 1px solid #e2e2e2;
   width: fit-content;
+  border-bottom: 1px solid transparent;
+  /* ocultamos el estático */
+  cursor: pointer;
 }
 
+.lista-certificados .certificado-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #919191;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.lista-certificados .certificado-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.lista-certificados .certificado-item:not(:hover)::after {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+
 /* CSS de las habilidades */
-.hero-content .hero-habilidades{
+.hero-content .hero-habilidades {
   background-color: #fff;
+  border-radius: 20px;
   text-align: center;
   padding: 5px;
 }
-.titulo-seccion{
+
+.titulo-seccion {
   text-align: center;
   font-size: 2rem;
 }
 
-.lista-habilidades{
+.lista-habilidades {
   list-style: none;
   padding: 0px;
   text-align: center;
 }
 
-.lista-habilidades .item-habilidades{
+.lista-habilidades .item-habilidades {
   padding: 10px;
   border: 1px solid #d6d3d1;
   margin: 5px 0;
@@ -221,13 +276,18 @@ body {
 
 .hero-image-svg {
   display: flex;
-  justify-content: center; /* centra horizontalmente */
-  align-items: center;     /* centra verticalmente */
+  justify-content: center;
+  /* centra horizontalmente */
+  align-items: center;
+  /* centra verticalmente */
 }
 
 /* CSS de los proyectos destacados */
 
-#proyectos .hero-content{gap: 0px;}
+#proyectos .hero-content {
+  gap: 0px;
+}
+
 .hero-proyectos {
   background-color: #ffffff;
   border: 1px solid #e5e5e5;
@@ -251,7 +311,8 @@ body {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
-  background-color: #f3f3f3; /* en caso de que no haya imagen */
+  background-color: #f3f3f3;
+  /* en caso de que no haya imagen */
 }
 
 .hero-proyectos h2 {
@@ -285,16 +346,16 @@ body {
   font-weight: 600;
 }
 
-.buttons-proyectos{
+.buttons-proyectos {
   justify-content: center;
   align-items: center;
 }
 
-.hero-contacto{
+.hero-contacto {
   text-align: center;
 }
 
-.titulo-proyectos{
+.titulo-proyectos {
   font-weight: 600;
   color: #79a97c;
 }
@@ -330,4 +391,3 @@ body {
 .footer-links a:hover {
   color: #79a97c;
 }
-
