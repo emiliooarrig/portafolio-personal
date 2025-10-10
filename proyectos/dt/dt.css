@@ -3,6 +3,7 @@
 
 :root{
     --fuente: "Arial";
+    --bg-hueso:  rgba(245, 245, 245, 0.9);
 }
 
 *{
@@ -13,9 +14,10 @@
 }
 
 nav{
-    height: 2rem;
+    height: 4rem;
     width: 100%;
     padding: 20px;
+    background-color: var(--bg-hueso);
 }
 
 .navbar .item-navbar{
@@ -23,11 +25,62 @@ nav{
     display: inline-block;
 }
 
+.navbar a{
+    text-decoration: none;
+    color: #000;
+}
+
+.navbar-proyecto{
+    font-weight: 800;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+
+.inside{
+    max-width: 50%;
+}
+
+.info-proyecto .titulo-proyecto{
+    font-weight: 500;
+}
+
+.presentacion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.imagen-proyecto{
+    width: 25rem;
+}
+
+.inside-botones{
+    padding: 20px;
+    margin: 1rem;
+}
+
+.btn{
+    padding: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 100;
+    color: #fff;
+    margin: 1rem;
+}
+
+.btn-codigo{
+    background-color: #4a6149;
+}
+
+.btn-demo{
+    color: #000;
+    border: 2px solid #c2c2c2;
+}
+
 
 
 
