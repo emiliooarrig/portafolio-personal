@@ -1,69 +1,83 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW:wght@100..400&display=swap');
 
-:root{
+:root {
     --fuente: "Arial";
-    --bg-hueso:  rgba(245, 245, 245, 0.9);
+    --bg-hueso: rgba(245, 245, 245, 0.9);
+    --color-verde: #4a6149;
+    --gris-texto: #666;
+    --fondo: #f3f3f3;
 }
+body{    background-color: var(--fondo)}
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--fuente);
 }
-
-nav{
+/* Barra de navegacion */
+nav {
     height: 4rem;
     width: 100%;
     padding: 20px;
     background-color: var(--bg-hueso);
 }
 
-.navbar .item-navbar{
+.navbar .item-navbar {
     list-style: none;
     display: inline-block;
 }
 
-.navbar a{
+.navbar a {
     text-decoration: none;
     color: #000;
 }
 
-.navbar-proyecto{
+.navbar-proyecto {
     font-weight: 800;
 }
+/* Estilado general de la página */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    background-color: #fff;
+    border-radius: 5px;
 }
 
-.inside{
-    max-width: 50%;
+.inside {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+/* Informacion del proyecto */
+.info-proyecto .titulo-proyecto {
+    font-weight: 900;
+    color: var(--color-verde)
 }
 
-.info-proyecto .titulo-proyecto{
-    font-weight: 500;
-}
+.descripcion-proyecto{color: var(--gris-texto); font-size: 1.2rem;}
 
-.presentacion{
+.presentacion {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
 }
 
-.imagen-proyecto{
+.imagen-proyecto {
     width: 25rem;
 }
 
-.inside-botones{
+.inside-botones {
     padding: 20px;
     margin: 1rem;
 }
 
-.btn{
+.btn {
     padding: 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -72,15 +86,233 @@ nav{
     margin: 1rem;
 }
 
-.btn-codigo{
-    background-color: #4a6149;
+.btn-codigo {
+  background-color: #79a97c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.4s ease;
+  background-image: linear-gradient(to right, #658e6a 0%, #658e6a 50%, #79a97c 50%, #79a97c 100%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.btn-codigo:hover {
+  background-position: left bottom;
 }
 
 .btn-demo{
-    color: #000;
-    border: 2px solid #c2c2c2;
+  border: 1px solid #ccc;
+  color: #333;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #919191 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: background-position 0.4s ease, color 0.4s ease;
 }
 
+.btn-demo:hover {
+  background-position: left bottom;
+  color: #fff; 
+}
 
+.btn-codigo i { 
+  margin-left: 0.5rem;
+}
 
+/* Informacion general del proyecto*/
 
+.inside-caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    /* Esquinas redondeadas */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
+
+.card h4 {
+    margin-top: 0;
+    color: var(--color-verde);
+}
+
+.card p {
+    color: var(--gris-texto);
+    margin-bottom: 5px;
+}
+
+/*Codigo para el stack tecnologico*/
+
+.stack {
+    margin-top: 2rem;
+}
+
+.inside-stack {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: space-around; 
+  gap: 2rem; 
+  width: 100%;
+}
+
+.inside-stack > h1 {
+  flex-basis: 100%; 
+  text-align: center;
+  color: var(--color-verde);
+}
+
+.inside-stack > .column {
+  flex: 1; 
+  min-width: 250px; 
+}
+
+h4 {
+    font-size: 1.25rem;
+    color: var(--color-verde);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+/* --- Estilos para la lista de tecnologías --- */
+.column-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.lista-element {
+    background-color: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    color: var(--gris-texto)
+}
+
+/* Efecto al pasar el cursor sobre un elemento */
+.lista-element:hover {
+    color: var(--color-verde);
+    border-color: var(--color-verde);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilos de responsabilidades*/
+.container-responsabilidades{
+    border: 2px solid #666;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.inside-responsabilidades {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.responsabilidades-lista {
+    font-size: 1.3rem;
+}
+
+.titulo-responsabilidades {
+    font-weight: 600;
+    color: var(--color-verde);
+}
+
+.container-responsabilidades{
+    width: 90%;
+    margin: 40px auto; 
+    padding: 25px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para cada item de la lista */
+
+.responsabilidades-lista{margin-left: 2rem;}
+.responsabilidades-lista li {
+    margin-bottom: 15px; 
+    line-height: 1.6; 
+    color: var(--gris-texto);
+    padding-left: 0.5rem; 
+}
+
+.texto-responsabilidades{
+    color: var(--gris-texto); 
+    font-weight: 500;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-verde)
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+
+    .presentacion{
+        flex-direction: column;
+    }
+
+    .imagen-proyecto{
+        width: 20rem;
+    }
+    .descripcion-proyecto{text-align: justify;}
+
+    .inside-botones{
+        margin: 1rem 0;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        /* Título un poco más grande en escritorio */
+    }
+
+    .columns-wrapper {
+        flex-direction: row;
+        /* Cambia la dirección a fila */
+        justify-content: space-around;
+        /* Distribuye el espacio horizontalmente */
+        align-items: flex-start;
+        /* Alinea las columnas en la parte superior */
+    }
+
+    .inside-caracteristicas {
+        grid-template-columns: repeat(1, 1fr); /* Mostramos 2 columnas */
+    }
+
+    .column {
+        flex: 1;
+    }
+
+    .responsabilidades-lista {
+        font-size: 1.1rem; /* Letra un poco más pequeña en móviles */
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .responsabilidades-lista{margin-left: 1rem;}
+}
